@@ -1,0 +1,35 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collaborative Pixel Art</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Collaborative Pixel Art</h1>
+    <div id="pixel-count"></div> <!-- Element to display pixel count -->
+  </div>
+  <div class="container">
+    <div id="canvas">
+      <!-- Canvas will be generated dynamically -->
+    </div>
+
+    <div class="color-selector">
+      <div class="color-option" style="background-color: #000000;"></div>
+      <div class="color-option" style="background-color: #FF0000;"></div>
+      <div class="color-option" style="background-color: #00FF00;"></div>
+      <div class="color-option" style="background-color: #0000FF;"></div>
+      <div class="color-option" style="background-color: #FFFF00;"></div>
+      <div class="color-option" style="background-color: #FF00FF;"></div>
+      <div class="color-option" style="background-color: #00FFFF;"></div>
+      <div class="color-option" style="background-color: #FFFFFF;"></div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
