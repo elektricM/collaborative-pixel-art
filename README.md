@@ -19,6 +19,7 @@ To set up the project, follow these steps:
     ```bash
     npm install
     ```
+
 3. **Start the server:**
 
     ```bash
@@ -26,7 +27,7 @@ To set up the project, follow these steps:
     ```
 
     or
-    
+
     ```bash
     node server.js
     ```
