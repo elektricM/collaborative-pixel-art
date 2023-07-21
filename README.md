@@ -9,19 +9,19 @@ To set up the project, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/elektricm/collaborative-pixel-art.git ```
+   git clone https://github.com/elektricm/collaborative-pixel-art.git
 
 2. **Install Dependencies:**
 
     Make sure you have Node.js and npm (Node Package Manager) installed on your system. Then, install the project dependencies by running in the project folder:
 
-    ```npm install```
+    ```npm install
 
 3. **Start the server:**
 
-    ```npm start```
+    ```npm start
     or
-    ```node server.js```
+    ```node server.js
 
 4. **Open the application in your browser:**
 
