@@ -11,9 +11,9 @@ const canvasHeight = 50;
 let pixels = new Array(canvasWidth * canvasHeight).fill(initialPixelColor);
 let totalPixelsPlaced = 0; // Counter for total pixels placed by everyone
 
-// Function to save the canvas data and the total number of pixels placed to a JSON file
+// Function to save the canvas data to a JSON file
 function saveCanvasToJSON() {
-  const data = JSON.stringify({ pixels, totalPixelsPlaced });
+  const data = JSON.stringify(pixels);
   fs.writeFileSync('canvas_data.json', data, 'utf8', (err) => {
     if (err) {
       console.error('Error saving canvas data:', err);
@@ -21,14 +21,13 @@ function saveCanvasToJSON() {
   });
 }
 
-// Function to load the canvas data and the total number of pixels placed from the JSON file
+// Function to load the canvas data from the JSON file
 function loadCanvasFromJSON() {
   try {
     if (fs.existsSync('canvas_data.json')) {
       const data = fs.readFileSync('canvas_data.json', 'utf8');
-      const jsonData = JSON.parse(data);
-      pixels = jsonData.pixels;
-      totalPixelsPlaced = jsonData.totalPixelsPlaced;
+      pixels = JSON.parse(data);
+      totalPixelsPlaced = pixels.filter(color => color !== initialPixelColor).length;
     } else {
       // If the file does not exist, create a new one with default pixel data
       saveCanvasToJSON();

@@ -67,7 +67,7 @@ function updatePixel(index, color) {
 }
 
 // Function to update the pixel count display
-function updatePixelCount(totalPixelsPlaced) {
+function updatePixelCount() {
   const pixelCountElement = document.getElementById('pixel-count');
   pixelCountElement.textContent = `Total Pixels: ${totalPixelsPlaced}, Your Pixels: ${yourPixelsPlaced}`;
 }
@@ -94,7 +94,7 @@ canvasDiv.addEventListener('click', (event) => {
 
     // Increment yourPixelsPlaced when you place a pixel
     yourPixelsPlaced++;
-    updatePixelCount(totalPixelsPlaced);
+    updatePixelCount();
     // Save yourPixelsPlaced value to the cookie
     setCookie('yourPixelsPlaced', yourPixelsPlaced, 365); // Cookie expires in 365 days
   }
@@ -107,8 +107,9 @@ socket.on('updatePixel', (index, color) => {
 
 // Receive the total pixels count from the server
 socket.on('totalPixelsCount', (count) => {
-  updatePixelCount(count);
+  totalPixelsPlaced = count;
+  updatePixelCount();
 });
 
 createCanvas();
-updatePixelCount(0); // Call to initialize the pixel count display with 0
+updatePixelCount(); // Call to initialize the pixel count display
