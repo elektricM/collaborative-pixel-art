@@ -10,6 +10,7 @@ To set up the project, follow these steps:
 
    ```bash
    git clone https://github.com/elektricm/collaborative-pixel-art.git
+    ```
 
 2. **Install Dependencies:**
 
@@ -17,16 +18,18 @@ To set up the project, follow these steps:
 
     ```bash
     npm install
-
+    ```
 3. **Start the server:**
 
     ```bash
     npm start
-    
+    ```
+
     or
     
     ```bash
     node server.js
+    ```
 
 4. **Open the application in your browser:**
 
