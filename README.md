@@ -15,13 +15,18 @@ To set up the project, follow these steps:
 
     Make sure you have Node.js and npm (Node Package Manager) installed on your system. Then, install the project dependencies by running in the project folder:
 
-    ```npm install
+    ```bash
+    npm install
 
 3. **Start the server:**
 
-    ```npm start
+    ```bash
+    npm start
+    
     or
-    ```node server.js
+    
+    ```bash
+    node server.js
 
 4. **Open the application in your browser:**
 
