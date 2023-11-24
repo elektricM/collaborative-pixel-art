@@ -7,10 +7,18 @@
   <title>Collaborative Pixel Art</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="
+    document.getElementById('intro').classList.add('fadeout')
+    setTimeout(() => {
+        document.getElementById('intro').style.display = 'none'
+    }, 800);
+">
+    <div id="intro" class="intro">
+        <h2>Collaborative Pixel Art</h2>
+    </div>
   <div class="header">
     <h1>Collaborative Pixel Art</h1>
-    <div id="pixel-count"></div> <!-- Element to display pixel count -->
+    <div id="pixel-count">En cours de chargement...</div> <!-- Element to display pixel count -->
   </div>
   <div class="container">
     <div id="canvas">
@@ -18,14 +26,18 @@
     </div>
 
     <div class="color-selector">
-      <div class="color-option" style="background-color: #000000;"></div>
+      <div class="color-option" style="background-color: #5454ff;"></div>
+      <div class="color-option" style="background-color: #00bbff;"></div>
+      <div class="color-option" style="background-color: #2e7d44;"></div>
+      <div class="color-option" style="background-color: #5ee834;"></div>
+      <div class="color-option" style="background-color: #ffe600;"></div>
+      <div class="color-option" style="background-color: #ff9900;"></div>
       <div class="color-option" style="background-color: #FF0000;"></div>
-      <div class="color-option" style="background-color: #00FF00;"></div>
-      <div class="color-option" style="background-color: #0000FF;"></div>
-      <div class="color-option" style="background-color: #FFFF00;"></div>
-      <div class="color-option" style="background-color: #FF00FF;"></div>
-      <div class="color-option" style="background-color: #00FFFF;"></div>
+      <div class="color-option" style="background-color: #ff89ff;"></div>
+      <div class="color-option" style="background-color: #a04cf9;"></div>
+      <div class="color-option" style="background-color: #808080;"></div>
       <div class="color-option" style="background-color: #FFFFFF;"></div>
+      <div class="color-option" style="background-color: #000000;"></div>
     </div>
   </div>
 
