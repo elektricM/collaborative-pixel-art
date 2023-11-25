@@ -27,7 +27,7 @@ body {
 .fadeout {
     animation-name: fadeout;
     animation-duration: 1s;
-    
+
 }
 @keyframes fadeout {
     from {
@@ -89,7 +89,7 @@ body {
     text-align: center;
     margin-top: 10px; /* Add spacing above the pixel count */
   }
-  
+
   /* Styling for the main container that wraps canvas and color selector */
   .container {
     display: flex;
@@ -98,25 +98,24 @@ body {
     align-items: center; /* Center the content vertically */
     background-color: #fffffff3; /* White background color */
     border-radius: 15px; /* Rounded corners for the container */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px; /* Add padding inside the container */
-    width: 95%; /* Set a maximum width for the container */
-    height: 1050px;
     margin-bottom: 10px;
   } 
-  
+
   /* Styling for the canvas where pixels will be placed */
   #canvas {
     padding: 10px;
     overflow-x: scroll;
-    width: calc(100% - 100px);
-    height: 1030px;
+    width: 95vw;
+    height: 95vw;
     display: grid;
-    grid-template-columns: repeat(100, 10px); /* Create 50 columns of 10px each */
-    grid-template-rows: repeat(100, 10px); /* Create 50 rows of 10px each */
+    grid-template-columns: repeat(200, 10px); /* Create 50 columns of 10px each */
+    grid-template-rows: repeat(200, 10px); /* Create 50 rows of 10px each */
     gap: 0; /* Remove any gap between pixels */
   }
-  
+
   /* Styling for individual pixels */
   .pixel {
     width: 10px;
@@ -124,52 +123,47 @@ body {
     display: inline-block;
     border: .1px solid #ccc; /* Add a 1px border around each pixel */
   }
-  
+
   /* Styling for the color selector section */
   .color-selector {
+    position: fixed;
+    background-color: #fffffff3;
+    border-radius: 30px;
+    padding: 10px;
+    bottom: 0;
     display: flex;
-    flex-direction: column; /* Color options arranged vertically */
+    flex-wrap: wrap;
     align-items: center; /* Center color options horizontally */
-    margin-left: 20px; /* Add some space to the left of the color selector */
+    margin: 20px; /* Add some space to the left of the color selector */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   /* Styling for individual color options */
   .color-option {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%; /* Make the color options circular */
     margin: 5px; /* Add spacing between color options */
     cursor: pointer; /* Show pointer cursor on hover */
     border: 2px solid #ccc; /* Add a 2px border around each color option */
     /* Color options will have their background color set dynamically */
   }
-  
+
   /* Styling for the currently selected color option */
   .color-option.selected {
-    border-color: #000; /* Change the border color for the selected color */
+    border-color: #000;
   }
-  
-  /* Responsive design for phone-friendly UI */
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column; /* Stack canvas and color selector vertically */
-    }
-  
-    #canvas {
-      width: 90%; /* Adjust canvas width to fit smaller screens */
-      height: auto; /* Allow canvas height to adapt based on content */
-      margin: 20px 0; /* Add some spacing around the canvas */
-    }
-  
 
-  
-    .color-option {
-      margin: 5px 8px; /* Adjust spacing between color options */
-    }
-  
-    /* Adjust pixel count styles for phone-friendly UI */
-    #pixel-count {
-      font-size: 14px;
-    }
+
+  p {
+    margin-bottom: 100px;
   }
-  
+
+  @media screen and (max-width: 520px) {
+    .alt {
+      display: none;
+    }
+
+
+  }
