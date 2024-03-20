@@ -7,28 +7,50 @@
   <title>Collaborative Pixel Art</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="
+    document.getElementById('intro').classList.add('fadeout')
+    setTimeout(() => {
+        document.getElementById('intro').style.display = 'none'
+    }, 800);
+">
+    <div id="intro" class="intro">
+        <h2>Collaborative Pixel Art</h2>
+    </div>
   <div class="header">
     <h1>Collaborative Pixel Art</h1>
-    <div id="pixel-count"></div> <!-- Element to display pixel count -->
+    <div id="pixel-count">En cours de chargement...</div> <!-- Element to display pixel count -->
   </div>
   <div class="container">
     <div id="canvas">
       <!-- Canvas will be generated dynamically -->
     </div>
 
-    <div class="color-selector">
-      <div class="color-option" style="background-color: #000000;"></div>
-      <div class="color-option" style="background-color: #FF0000;"></div>
-      <div class="color-option" style="background-color: #00FF00;"></div>
-      <div class="color-option" style="background-color: #0000FF;"></div>
-      <div class="color-option" style="background-color: #FFFF00;"></div>
-      <div class="color-option" style="background-color: #FF00FF;"></div>
-      <div class="color-option" style="background-color: #00FFFF;"></div>
-      <div class="color-option" style="background-color: #FFFFFF;"></div>
-    </div>
+    
   </div>
-
+  <div class="color-selector">
+    <div class="color-option" style="background-color: #0000ff;"></div>
+    <div class="color-option alt" style="background-color: #5454ff;"></div>
+    <div class="color-option" style="background-color: #00bbff;"></div>
+    <div class="color-option alt" style="background-color: #00ffff;"></div>
+    <div class="color-option alt" style="background-color: #0d5421;"></div>
+    <div class="color-option" style="background-color: #2e7d44;"></div>
+    <div class="color-option" style="background-color: #5ee834;"></div>
+    <div class="color-option" style="background-color: #f9cb9c;"></div>
+    <div class="color-option" style="background-color: #eeff00;"></div>
+    <div class="color-option alt" style="background-color: #ffe600;"></div>
+    <div class="color-option" style="background-color: #ff9900;"></div>
+    <div class="color-option" style="background-color: #FF0000;"></div>
+    <div class="color-option alt" style="background-color: #ff89a4;"></div>
+    <div class="color-option" style="background-color: #ff89ff;"></div>
+    <div class="color-option" style="background-color: #a04cf9;"></div>
+    <div class="color-option" style="background-color: #a48067;"></div>
+    <div class="color-option alt" style="background-color: #512f17;"></div>
+    <div class="color-option alt" style="background-color: #545454;"></div>
+    <div class="color-option" style="background-color: #bdbdbd;"></div>
+    <div class="color-option" style="background-color: #FFFFFF;"></div>
+    <div class="color-option" style="background-color: #000000;"></div>
+  </div>
+  <p>Made by Dolez M.</p>
   <script src="/socket.io/socket.io.js"></script>
   <script src="script.js"></script>
 </body>

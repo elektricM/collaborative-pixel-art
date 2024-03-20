@@ -49,8 +49,8 @@ function placePixel(index, color) {
 
 // Create the canvas
 const canvasDiv = document.getElementById('canvas');
-const canvasWidth = 50;
-const canvasHeight = 50;
+const canvasWidth = 200;
+const canvasHeight = 200;
 
 function createCanvas() {
   for (let i = 0; i < canvasWidth * canvasHeight; i++) {

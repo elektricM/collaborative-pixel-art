@@ -6,8 +6,8 @@ const io = require('socket.io')(http);
 const fs = require('fs');
 
 const initialPixelColor = '#FFFFFF'; // Default color: White
-const canvasWidth = 50;
-const canvasHeight = 50;
+const canvasWidth = 200;
+const canvasHeight = 200;
 let pixels = new Array(canvasWidth * canvasHeight).fill(initialPixelColor);
 let totalPixelsPlaced = 0; // Counter for total pixels placed by everyone
 
