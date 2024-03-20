@@ -12,13 +12,16 @@ let pixels = new Array(canvasWidth * canvasHeight).fill(initialPixelColor);
 let totalPixelsPlaced = 0; // Counter for total pixels placed by everyone
 
 // Function to save the canvas data to a JSON file
-function saveCanvasToJSON() {
-  const data = JSON.stringify(pixels);
-  fs.writeFileSync('canvas_data.json', data, 'utf8', (err) => {
-    if (err) {
-      console.error('Error saving canvas data:', err);
-    }
-  });
+async function saveCanvasToJSON() {
+  try {
+    await fs.promises.access('canvas_data.json', fs.constants.F_OK);
+  } catch (err) {
+    // Create the file if it doesn't exist
+    await fs.promises.writeFile('canvas_data.json', JSON.stringify(pixels), 'utf8');
+  }
+  
+  // Write the updated pixel data to the JSON file
+  await fs.promises.writeFile('canvas_data.json', JSON.stringify(pixels), 'utf8');
 }
 
 // Function to load the canvas data from the JSON file
