@@ -1,56 +1,62 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A collaborative pixel art canvas where everyone can draw together in real-time. Inspired by r/place.">
   <title>Collaborative Pixel Art</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body onload="
-    document.getElementById('intro').classList.add('fadeout')
-    setTimeout(() => {
-        document.getElementById('intro').style.display = 'none'
-    }, 800);
-">
-    <div id="intro" class="intro">
-        <h2>Collaborative Pixel Art</h2>
-    </div>
-  <div class="header">
-    <h1>Collaborative Pixel Art</h1>
-    <div id="pixel-count">En cours de chargement...</div> <!-- Element to display pixel count -->
+<body>
+  <!-- Intro splash screen -->
+  <div id="intro" class="intro">
+    <h2>Collaborative Pixel Art</h2>
   </div>
-  <div class="container">
-    <div id="canvas">
-      <!-- Canvas will be generated dynamically -->
-    </div>
 
-    
-  </div>
-  <div class="color-selector">
-    <div class="color-option" style="background-color: #0000ff;"></div>
-    <div class="color-option alt" style="background-color: #5454ff;"></div>
-    <div class="color-option" style="background-color: #00bbff;"></div>
-    <div class="color-option alt" style="background-color: #00ffff;"></div>
-    <div class="color-option alt" style="background-color: #0d5421;"></div>
-    <div class="color-option" style="background-color: #2e7d44;"></div>
-    <div class="color-option" style="background-color: #5ee834;"></div>
-    <div class="color-option" style="background-color: #f9cb9c;"></div>
-    <div class="color-option" style="background-color: #eeff00;"></div>
-    <div class="color-option alt" style="background-color: #ffe600;"></div>
-    <div class="color-option" style="background-color: #ff9900;"></div>
-    <div class="color-option" style="background-color: #FF0000;"></div>
-    <div class="color-option alt" style="background-color: #ff89a4;"></div>
-    <div class="color-option" style="background-color: #ff89ff;"></div>
-    <div class="color-option" style="background-color: #a04cf9;"></div>
-    <div class="color-option" style="background-color: #a48067;"></div>
-    <div class="color-option alt" style="background-color: #512f17;"></div>
-    <div class="color-option alt" style="background-color: #545454;"></div>
-    <div class="color-option" style="background-color: #bdbdbd;"></div>
-    <div class="color-option" style="background-color: #FFFFFF;"></div>
-    <div class="color-option" style="background-color: #000000;"></div>
-  </div>
-  <p>Made by Dolez M.</p>
+  <!-- Header -->
+  <header class="header">
+    <h1>Collaborative Pixel Art</h1>
+    <div id="pixel-count">Loading...</div>
+  </header>
+
+  <!-- Main canvas container -->
+  <main class="container">
+    <div id="canvas" role="img" aria-label="Collaborative pixel art canvas">
+      <!-- Canvas pixels generated dynamically via JavaScript -->
+    </div>
+  </main>
+
+  <!-- Color palette selector -->
+  <nav class="color-selector" aria-label="Color palette">
+    <div class="color-option" style="background-color: #0000FF;" title="Blue"></div>
+    <div class="color-option alt" style="background-color: #5454FF;" title="Light Blue"></div>
+    <div class="color-option" style="background-color: #00BBFF;" title="Sky Blue"></div>
+    <div class="color-option alt" style="background-color: #00FFFF;" title="Cyan"></div>
+    <div class="color-option alt" style="background-color: #0D5421;" title="Dark Green"></div>
+    <div class="color-option" style="background-color: #2E7D44;" title="Green"></div>
+    <div class="color-option" style="background-color: #5EE834;" title="Lime"></div>
+    <div class="color-option" style="background-color: #F9CB9C;" title="Peach"></div>
+    <div class="color-option" style="background-color: #EEFF00;" title="Yellow"></div>
+    <div class="color-option alt" style="background-color: #FFE600;" title="Gold"></div>
+    <div class="color-option" style="background-color: #FF9900;" title="Orange"></div>
+    <div class="color-option" style="background-color: #FF0000;" title="Red"></div>
+    <div class="color-option alt" style="background-color: #FF89A4;" title="Pink"></div>
+    <div class="color-option" style="background-color: #FF89FF;" title="Magenta"></div>
+    <div class="color-option" style="background-color: #A04CF9;" title="Purple"></div>
+    <div class="color-option" style="background-color: #A48067;" title="Tan"></div>
+    <div class="color-option alt" style="background-color: #512F17;" title="Brown"></div>
+    <div class="color-option alt" style="background-color: #545454;" title="Gray"></div>
+    <div class="color-option" style="background-color: #BDBDBD;" title="Light Gray"></div>
+    <div class="color-option" style="background-color: #FFFFFF;" title="White"></div>
+    <div class="color-option" style="background-color: #000000;" title="Black"></div>
+  </nav>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made by Dolez M. | <a href="https://github.com/elektricM/collaborative-pixel-art" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <!-- Scripts -->
   <script src="/socket.io/socket.io.js"></script>
   <script src="script.js"></script>
 </body>
